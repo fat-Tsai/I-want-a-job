@@ -42,16 +42,11 @@ cursor的可选值
 // xxx 指的是你项目中的font-class名
 ```
 
-![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920223439924.png)
-
 到这里，就完成了，官网还提供了web端的其他方法和移动端的方法，链接放在这https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&helptype=code
 
 **从Vuex中取数据**
 
 我存了用户信息在Vuex中的state中的userInfo和localStorage中
-
-![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920224038631.png)
-
 尝试从state取数据，取不到再到localStorage里取
 
 ```javascript
