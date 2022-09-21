@@ -12,13 +12,13 @@
 
 cursor的可选值
 
-1. help 鼠标+有方向的箭头![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-1.png)
+1. help 鼠标+有方向的箭头
 2. wait 我们常见的加载
-3. crosshair 翻译过来为 "十字准线"![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-2.png)
-4. not-allowed 意思为不允许/禁止![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-3.png)
+3. crosshair 翻译过来为 "十字准线"
+4. not-allowed 意思为不允许/禁止
+5. zoom-in/zoom-out 放大/缩小 
+6. grab 意思为抓，就是我们常见的事件点击鼠标悬浮的样子
 
-5. zoom-in/zoom-out 放大/缩小 ![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-4.png)
-6. grab 意思为抓，就是我们常见的事件点击鼠标悬浮的样子![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-5.png)
 详情见https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor
 
 **删除本地分支** `git branch -d 分支名`
