@@ -12,14 +12,13 @@
 
 cursor的可选值
 
-1. help 鼠标+有方向的箭头![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920220334035.png)
+1. help 鼠标+有方向的箭头![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-1.png)
 2. wait 我们常见的加载
-3. crosshair 翻译过来为 "十字准线"![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920220647693.png)
-4. not-allowed 意思为不允许/禁止![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920220822098.png)
+3. crosshair 翻译过来为 "十字准线"![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-2.png)
+4. not-allowed 意思为不允许/禁止![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-3.png)
 
-5. zoom-in/zoom-out 放大/缩小![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920220915195.png)
-6. grab 意思为抓，就是我们常见的事件点击鼠标悬浮的样子![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920221045996.png)
-
+5. zoom-in/zoom-out 放大/缩小 ![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-4.png)
+6. grab 意思为抓，就是我们常见的事件点击鼠标悬浮的样子![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-5.png)
 详情见https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor
 
 **删除本地分支** `git branch -d 分支名`
@@ -32,7 +31,7 @@ cursor的可选值
 4. 点开购物车，将图标放置在项目下
 5. 打开我的项目，选择下载
 6. 解压缩包，除.html外，其余文件全部放置项目中
-7. 在Vue中的main.js文件中引入刚刚解压缩的.css文件（这边使用的路径根据你放置的路径来）![](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220920222955217.png)
+7. 在Vue中的main.js文件中引入刚刚解压缩的.css文件（这边使用的路径根据你放置的路径来）![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/1/1-6.png)
 
 8. 在页面中引用，这里使用font-class引用
 
@@ -95,11 +94,11 @@ export default request
 
 **管理页面是用动态组件好还是路由跳转好**
 
-![image-20220921235339626](C:\Users\asus\Desktop\I-want-a-job\imgs\2\2-1.png)
+![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/2/2-1.png)
 
 ```javascript
 /*
-	文件位置router/index.js,假设我的一级路由是first,二级路由是			second1、second2
+	文件位置router/index.js,假设我的一级路由是first,二级路由是second1、second2
 */
 
 import Vue from 'vue'
@@ -133,7 +132,7 @@ export default router
 
 **使用router-link会出现下划线，如何消除下划线**
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/23075729/1663749005624-076f47b4-4561-42fb-8910-9f4d28e6b24b.png)
+![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/2/2-2.png)
 
 仔细看，会发现有一条很浅的紫色线。这一段的代码简单介绍就是一个被router-link包围的div
 
@@ -163,5 +162,5 @@ a {
 
 解决方法二： 在页面中写 ```a { text-decoration: none; }``` 。因为router-link标签本质上也是一个a标签
 
-![img](https://cdn.nlark.com/yuque/0/2022/png/23075729/1663749324132-b48699bf-6686-4655-b965-84bd74f55c12.png)
+![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/2/2-3.png)
 
