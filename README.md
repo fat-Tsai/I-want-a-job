@@ -59,3 +59,109 @@ getName:state=> {
 注意点：如果调用的属性是 [Object Object] 记得使用JSON.parse()
 ```
 
+# DAY2
+
+**前端：如何在requet.js文件中使用路由**
+
+我的需求是用户未登录时，访问后端没有权限，前端响应拦截器需要定向到登录页面
+
+```javascript
+// 文件位置 utils/request.js
+
+import axios from 'axios'
+import router from '@/router'  // 引入router
+
+const request = axios.create({
+	baseURL: '你要访问的网址'
+})
+
+// 添加请求拦截器
+request.interceptors.request.use(config => {}, error => {})
+// 添加响应拦截器
+request.interceptors.response.use(res => {
+	const code = res.data.code
+	const msg = res.data.msg
+	if(msg === 'Not login') { // 未登录状态
+		router.replace('/login')  // 路由定向到登录页
+	} else {
+        return res.data
+    }
+},error => {
+    return Promise.reject(error)
+})
+
+export default request
+```
+
+**管理页面是用动态组件好还是路由跳转好**
+
+![image-20220921235339626](C:\Users\asus\Desktop\I-want-a-job\imgs\2\2-1.png)
+
+```javascript
+/*
+	文件位置router/index.js,假设我的一级路由是first,二级路由是			second1、second2
+*/
+
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)  // 挂载到Vue实例
+
+const routes = [{
+	{ 
+		path: '/first',
+		compnent: () => import('first页面所在的路径'),
+		children: [
+			{
+				path: '/second1',
+				compnent: () => import('second1页面所在的路径'),
+			},
+			{
+				path: '/second2',
+				compnent: () => import('second2页面所在的路径'),
+			}
+		]
+	}
+}]
+
+const router = new VueRouter({
+	routes
+})
+
+export default router
+```
+
+**使用router-link会出现下划线，如何消除下划线**
+
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/23075729/1663749005624-076f47b4-4561-42fb-8910-9f4d28e6b24b.png)
+
+仔细看，会发现有一条很浅的紫色线。这一段的代码简单介绍就是一个被router-link包围的div
+
+```
+<router-link v-for="item in menuList" :key="item.id">
+	<div>这里面放的子菜单，即XX管理</div>
+</router-link>
+```
+
+解决方法一： 框架使用Vue，所以我在静态资源assets中放置了一个全局样式表global.css
+
+```javascript
+// 全局样式表
+html,
+body,
+#app {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+```
+
+解决方法二： 在页面中写 ```a { text-decoration: none; }``` 。因为router-link标签本质上也是一个a标签
+
+![img](https://cdn.nlark.com/yuque/0/2022/png/23075729/1663749324132-b48699bf-6686-4655-b965-84bd74f55c12.png)
+
