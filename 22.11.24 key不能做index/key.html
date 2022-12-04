@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div>答案：用 index 作为 key 时，在对数据进行，逆序添加，逆序删除等破坏顺序的操作时，会产生没必要的真实 DOM更新，从而导致效率低
+            用 index 作为 key 时，如果结构中包含输入类的 DOM，会产生错误的 DOM 更新
+            在开发中最好每条数据使用唯一标识固定的数据作为 key，比如后台返回的 ID，手机号，身份证号等唯一值
+            如果不存在对数据逆序添加，逆序删除等破坏顺序的操作时，仅用于渲染展示用时，使用 index 作为 key 也是可以的（但是还是不建议使用，养成良好开发习惯）。
+            
+            作者：政采云前端团队
+            链接：https://juejin.cn/post/7026119446162997261
+            来源：稀土掘金
+            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+        <span>ID:</span><input type="text" v-model="id">
+        <span>Name:</span><input type="text" v-model="name">
+        <button @click="handleClick">添加</button>
+
+        <div v-for="(item, index) in list" :key="index">
+            <input type="checkbox" />
+            <span @click="handleDelete(index)">{{item.id}} --- {{item.name}}</span>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                list: [
+                    {id: 1, name: '张三'},
+                    {id: 2, name: '李四'},
+                    {id: 3, name: '王五'},
+                    {id: 4, name: '赵六'},
+                ]
+            },
+            methods: {
+                handleClick() {
+                    this.list.push({
+                        id: this.id,
+                        name: this.name
+                    })
+                },
+                handleDelete(index) {
+                    this.list.splice(index, 1)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

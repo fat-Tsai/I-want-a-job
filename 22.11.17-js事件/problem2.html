@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='one'>
+        one
+        <div id='two'>
+            two
+            <div id='three'>
+                three
+                <div id='four'>
+                    four
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        one.addEventListener('click',function(){
+            alert('one');
+        },true);
+        two.addEventListener('click',function(){
+            alert('two,bubble');
+        },false);
+        two.addEventListener('click',function(){
+            alert('two,capture');
+        },true);
+        three.addEventListener('click',function(){
+            alert('three,bubble');
+        },true);
+        four.addEventListener('click',function(){
+            alert('four');
+        },true);
+    </script>
+</body>
+</html>

@@ -164,3 +164,18 @@ a {
 
 ![image](https://github.com/fat-Tsai/I-want-a-job/blob/main/imgs/2/2-3.png)
 
+# DAY3
+
+今天就来总结一下最近笔试遇到的问题吧
+
+**二叉树的性质**
+
+1. 在二叉树的第 i 层上最多有 $2^{i-1}$ 个节点，当 i >=1 时
+2. 二叉树深度为 k，那么最多有  $2^k-1$ 个节点
+3. 在完全二叉树中，具有 n 个节点的完全二叉树其深度为 $[log_2n]+1$ ，其中 $[log_2n]$ 为向下取整
+
+**二叉树的分类**
+
+满二叉树：每一层的节点都是满的，第 i 层的节点数为 $2^{i-1}$ 个
+
+![image-20220924114502863](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220924114502863.png)
